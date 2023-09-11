@@ -1,7 +1,7 @@
 const ShopContainer = () => {
     return (
         <>
-            <h1>Blah</h1>
+            <h1>Hello World!</h1>
         </>
     );
 };
