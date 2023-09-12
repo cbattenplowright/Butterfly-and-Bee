@@ -1,0 +1,19 @@
+.shop-footer {
+    background-color: rgb(255, 248, 166);
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    height: 75px;
+}
+
+.logo {
+    height: 35px;
+    width: 35px;
+}
+
+.social-media-item-container {
+    display: flex;
+    gap: 20px;
+}

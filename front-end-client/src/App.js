@@ -3,7 +3,7 @@ import ShopContainer from "./containers/ShopContainer";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Checkout from "./components/checkoutComponents/Checkout";
 import ShopHeader from "./components/ShopHeader";
-import ShopFooter from "./components/ShopFooter";
+import ShopFooter from "./components/shopFooter/ShopFooter";
 
 function App() {
     return (
