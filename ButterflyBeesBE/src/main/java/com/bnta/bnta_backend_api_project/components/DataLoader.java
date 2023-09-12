@@ -10,6 +10,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -42,29 +43,28 @@ public class DataLoader implements ApplicationRunner {
 
         // PRODUCTS DATA LOADER
 
-        List<Book> books = Arrays.asList(
-                new Book("JK Rowling","Harry",13,11,12,2001,500),
-                new Book("JK Rowling","Harry Potter the cursed child 2",43,11,12,2001,500),
-                new Book("JK Rowling","Harry Potter the cursed child 3",12,11,12,2001,500),
-                new Book("JK Rowling","Harry Potter the cursed child 4",533,11,12,2001,500),
-                new Book("Khalid Hosseini","A Thousand Splendid Suns",533,11,12,2001,500)
-        );
+        List<Book> books = new ArrayList<>(Arrays.asList(
+                new Book("JK Rowling", "Harry Potter and the Philosopher's Stone", 13, 11, 40, 2001, 500),
+                new Book("George Orwell", "1984", 43, 11, 30, 1949, 350),
+                new Book("J.R.R. Tolkien", "The Lord of the Rings", 12, 11, 20, 1954, 1170),
+                new Book("Agatha Christie", "Murder on the Orient Express", 533, 11, 10, 1934, 250),
+                new Book("Khalid Hosseini", "The Kite Runner", 433, 11, 0, 2003, 370)
+        ));
 
-        List<Movie> movies = Arrays.asList(
-                new Movie("Francis","The Godfather",10,12,100,9.9,100),
-                new Movie("Francis","The Godfather",10,12,100,9.9,100),
-                new Movie("Francis","The Godfather",10,12,100,9.9,100),
-                new Movie("Francis","The Godfather",10,12,100,9.9,100)
+        List<Movie> movies = new ArrayList<>(Arrays.asList(
+                new Movie("Francis Ford Coppola", "The Godfather", 175, 12, 10, 9.2, 100),
+                new Movie("Quentin Tarantino", "Pulp Fiction", 154, 18, 20, 8.9, 110),
+                new Movie("Christopher Nolan", "Inception", 148, 12, 30, 8.8, 130),
+                new Movie("Steven Spielberg", "Jurassic Park", 127, 7, 0, 8.1, 120)
+        ));
 
-        );
+        List<Music> songs = new ArrayList<>(Arrays.asList(
+                new Music("The Beatles", "Hey Jude", 5, 12, 100, "1970", 200),
+                new Music("Queen", "Bohemian Rhapsody", 6, 12, 50, "1980", 210),
+                new Music("Michael Jackson", "Billie Jean", 4, 12, 25, "2000", 190),
+                new Music("Bob Marley", "No Woman, No Cry", 7, 12, 0, "2010", 180)
+        ));
 
-        List<Music> songs = Arrays.asList(
-                new Music("Outlandish", "Look into my eyes",10,12,200,"2000",200),
-                new Music("Outlandish", "Look into my eyes",10,12,200,"2000",200),
-                new Music("Outlandish", "Look into my eyes",10,12,200,"2000",200),
-                new Music("Outlandish", "Look into my eyes",10,12,200,"2000",200)
-
-        );
 
 
         for (Book book : books) {
