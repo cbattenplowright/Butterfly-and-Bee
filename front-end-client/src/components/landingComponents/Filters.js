@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Filters = ({
     fetchMovies,
@@ -13,9 +13,11 @@ const Filters = ({
     const handleChange = (event) => {
         const search = event.target.value;
         setStateSearchQuery(search);
-        fetchProductItemsBySearchQuery(stateSearchQuery);
-
     }
+
+    useEffect(() => {
+        fetchProductItemsBySearchQuery(stateSearchQuery)
+    }, [stateSearchQuery])
     return (
         <>
             <input
