@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const ShopContainer = () => {
     const [productItems, setProductItems] = useState([]);
@@ -9,14 +10,27 @@ const ShopContainer = () => {
         console.log(data);
     }
 
+
     useEffect(() => {
         fetchProductItems();
     },[]);
     return (
         <>
+        <ul>
+            <li>
+                <Link to = "/">Home</Link>
+            </li>
+            <li>
+            <Link to = "/checkout">Check_out</Link>
+            </li>
+        </ul>
             <h1>Hello World!</h1>
+
+
         </>
     );
 };
+
+
 
 export default ShopContainer;
