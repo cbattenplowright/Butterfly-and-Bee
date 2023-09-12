@@ -30,8 +30,9 @@ const ShopContainer = () => {
         </li>
       </ul>
       <h1>Hello World!</h1>
+      <ProductList productItems={productItems} />
     </>
-  );
+  )
 };
 
 export default ShopContainer;
