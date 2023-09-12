@@ -1,38 +1,67 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ProductList from "../components/landingComponents/ProductList";
+import Filters from "../components/landingComponents/Filters";
 
 const ShopContainer = () => {
+    const [productItems, setProductItems] = useState([]);
 
-  const [productItems, setProductItems] = useState([]);
+    const fetchProductItems = async () => {
+        const response = await fetch("http://localhost:8080/products");
+        const data = await response.json();
+        setProductItems(data);
+        console.log(data);
+    };
 
-  const fetchProductItems = async () => {
-    const response = await fetch("http://localhost:8080/products");
-    const data = await response.json();
-    setProductItems(data);
-    console.log(data);
-  };
+    const fetchMovies = async () => {
+        const response = await fetch("http://localhost:8080/products/movies");
+        const data = await response.json();
+        setProductItems(data);
+        console.log(data);
+    };
 
+    const fetchBooks = async () => {
+        const response = await fetch("http://localhost:8080/products/books");
+        const data = await response.json();
+        setProductItems(data);
+        console.log(data);
+    };
 
+    const fetchSongs = async () => {
+        const response = await fetch("http://localhost:8080/products/songs");
+        const data = await response.json();
+        setProductItems(data);
+        console.log(data);
+    };
 
-  useEffect(() => {
-    fetchProductItems();
-  }, []);
+    useEffect(() => {
+        fetchProductItems();
+    }, []);
 
-  return (
-    <>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/checkout">Checkout</Link>
-        </li>
-      </ul>
-      <h1>Hello World!</h1>
-      <ProductList productItems={productItems} />
-    </>
-  )
+    // useEffect(() => {
+    //   fetchMovies();
+    // }, [onMovieFilter])
+
+    return (
+        <>
+            <ul>
+                <li>
+                    <Link to="/">Home</Link>
+                </li>
+                <li>
+                    <Link to="/checkout">Checkout</Link>
+                </li>
+            </ul>
+            <h1>Hello World!</h1>
+            <Filters
+                fetchMovies={fetchMovies}
+                fetchBooks={fetchBooks}
+                fetchSongs={fetchSongs}
+                fetchProductItems={fetchProductItems}
+            />
+            <ProductList productItems={productItems} />
+        </>
+    );
 };
 
 export default ShopContainer;
