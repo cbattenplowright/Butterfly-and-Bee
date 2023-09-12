@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import ProductList from "../components/landingComponents/ProductList";
 import Filters from "../components/landingComponents/Filters";
 
@@ -44,14 +43,6 @@ const ShopContainer = () => {
 
     return (
         <>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-                <li>
-                    <Link to="/checkout">Checkout</Link>
-                </li>
-            </ul>
             <h1>Hello World!</h1>
             <Filters
                 fetchMovies={fetchMovies}
