@@ -11,6 +11,8 @@ public class Book extends Product{
     private int yearOfPublication;
     @Column(name = "no_of_pages")
     private int noOfPages;
+
+    private String type;
     public Book() {
     }
 
@@ -18,6 +20,7 @@ public class Book extends Product{
         super(creator, title, price, cost, availableQuantity);
         this.yearOfPublication = yearOfPublication;
         this.noOfPages = noOfPages;
+        this.type = "book";
     }
 
     public int getYearOfPublication() {
@@ -34,5 +37,13 @@ public class Book extends Product{
 
     public void setNoOfPages(int noOfPages) {
         this.noOfPages = noOfPages;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

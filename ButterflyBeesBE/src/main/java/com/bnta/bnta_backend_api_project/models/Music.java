@@ -12,6 +12,8 @@ public class Music extends Product{
     @Column(name = "song_length")
     private int songLength;
 
+    private String type;
+
     public Music() {
     }
 
@@ -19,6 +21,7 @@ public class Music extends Product{
         super(creator, title, price, cost, availableQuantity);
         this.decade = decade;
         this.songLength = songLength;
+        this.type = "music";
     }
 
     public String getDecade() {
@@ -36,4 +39,8 @@ public class Music extends Product{
     public void setSongLength(int songLength) {
         this.songLength = songLength;
     }
+
+    public String getType(){return type;}
+
+    public void setType(String type){this.type = type;}
 }

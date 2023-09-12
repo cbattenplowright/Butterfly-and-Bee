@@ -1,11 +1,29 @@
+import { useEffect, useState } from "react";
+
 const Filters = ({
     fetchMovies,
     fetchBooks,
     fetchSongs,
-    fetchProductItems
+    fetchProductItems,
+    fetchProductItemsBySearchQuery
 }) => {
+
+    const [ stateSearchQuery, setStateSearchQuery] = useState("");
+
+    const handleChange = (event) => {
+        const search = event.target.value;
+        setStateSearchQuery(search);
+    }
+
+    useEffect(() => {
+        fetchProductItemsBySearchQuery(stateSearchQuery)
+    }, [stateSearchQuery])
     return (
         <>
+            <input
+                id="searchItem" type="text" placeholder="search for some media"
+                onChange={handleChange} value={stateSearchQuery}
+            />
             <button type="button" name="movie-button" onClick={fetchMovies}>
                 Movies
             </button>
