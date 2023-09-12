@@ -37,9 +37,6 @@ const ShopContainer = () => {
         fetchProductItems();
     }, []);
 
-    // useEffect(() => {
-    //   fetchMovies();
-    // }, [onMovieFilter])
 
     return (
         <>
