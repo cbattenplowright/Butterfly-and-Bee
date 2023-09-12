@@ -34,12 +34,17 @@ const ShopContainer = () => {
     };
 
     const fetchProductItemsBySearchQuery = async (searchQuery) => {
-        const movieResponse = await fetch("http://localhost:8080/products/movie/${searchQuery}")
-        const bookResponse = await fetch("http://localhost:8080/products/books/${searchQuery}")
-        const musicResponse = await fetch("http://localhost:8080/products/songs/${searchQuery}")
-        const data = await movieResponse.json() && bookResponse.json() && musicResponse.json();
+        console.log(searchQuery);
+        const movieResponse = await fetch(`http://localhost:8080/products/movie/${searchQuery}`)
+        // const bookResponse = await fetch("http://localhost:8080/products/books/${searchQuery}")
+        // const musicResponse = await fetch("http://localhost:8080/products/songs/${searchQuery}")
+        const data = await movieResponse.json();
+        // data.push(await bookResponse.json());
+        // data.push(await musicResponse.json());
         setProductItems(data);
         console.log(data);
+        console.log(movieResponse);
+        
     }
 
     useEffect(() => {

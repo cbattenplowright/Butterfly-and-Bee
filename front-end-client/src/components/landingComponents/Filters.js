@@ -4,7 +4,8 @@ const Filters = ({
     fetchMovies,
     fetchBooks,
     fetchSongs,
-    fetchProductItems
+    fetchProductItems,
+    fetchProductItemsBySearchQuery
 }) => {
 
     const [ stateSearchQuery, setStateSearchQuery] = useState("");
@@ -12,6 +13,7 @@ const Filters = ({
     const handleChange = (event) => {
         const search = event.target.value;
         setStateSearchQuery(search);
+        fetchProductItemsBySearchQuery(stateSearchQuery);
 
     }
     return (
