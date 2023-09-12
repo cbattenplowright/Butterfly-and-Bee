@@ -33,6 +33,15 @@ const ShopContainer = () => {
         console.log(data);
     };
 
+    const fetchProductItemsBySearchQuery = async (searchQuery) => {
+        const movieResponse = await fetch("http://localhost:8080/products/movie/${searchQuery}")
+        const bookResponse = await fetch("http://localhost:8080/products/books/${searchQuery}")
+        const musicResponse = await fetch("http://localhost:8080/products/songs/${searchQuery}")
+        const data = await movieResponse.json() && bookResponse.json() && musicResponse.json();
+        setProductItems(data);
+        console.log(data);
+    }
+
     useEffect(() => {
         fetchProductItems();
     }, []);
@@ -46,6 +55,7 @@ const ShopContainer = () => {
                 fetchBooks={fetchBooks}
                 fetchSongs={fetchSongs}
                 fetchProductItems={fetchProductItems}
+                fetchProductItemsBySearchQuery={fetchProductItemsBySearchQuery}
             />
             <ProductList productItems={productItems} />
         </>
