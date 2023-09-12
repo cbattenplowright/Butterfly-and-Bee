@@ -62,7 +62,7 @@ const ShopContainer = () => {
 
   return (
     <>
-      <h1>Hello World!</h1>
+  
       <Filters
         fetchMovies={fetchMovies}
         fetchBooks={fetchBooks}
