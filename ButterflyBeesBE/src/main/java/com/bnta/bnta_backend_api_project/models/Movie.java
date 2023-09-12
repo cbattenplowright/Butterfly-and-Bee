@@ -12,6 +12,8 @@ public class Movie extends Product{
     @Column(name = "run_time")
     private int runTime;
 
+    private String type;
+
     public Movie() {
 
     }
@@ -20,6 +22,7 @@ public class Movie extends Product{
         super(creator, title, price, cost, availableQuantity);
         this.rating = rating;
         this.runTime = runTime;
+        this.type = "movie";
     }
 
     public double getRating() {
@@ -36,5 +39,13 @@ public class Movie extends Product{
 
     public void setRunTime(int runTime) {
         this.runTime = runTime;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }
