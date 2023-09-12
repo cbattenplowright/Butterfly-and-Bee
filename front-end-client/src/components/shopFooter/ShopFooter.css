@@ -6,6 +6,9 @@
     align-items: center;
     justify-items: center;
     height: 75px;
+    font-family: 'Cedarville Cursive', cursive;
+    display: flex;
+    font-size: xx-large;
 }
 
 .logo {
