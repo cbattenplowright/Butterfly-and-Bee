@@ -10,7 +10,9 @@ const ProductItem = ({ productItem }) => {
             <img src={productItem.image} height={"200"} />
             <p>Price: £{(productItem.price / 100).toFixed(2)}</p>
             <p>Available quantity: {productItem.availableQuantity}</p>
-            <button className="add-to-basket">Add to basket</button>
+            <button className="add-to-basket" onClick={addToCart(productItem.id)}>
+                Add to basket
+            </button>
         </div>
     );
 };
