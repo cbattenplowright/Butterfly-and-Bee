@@ -41,12 +41,21 @@ const ShopContextProvider = (props) => {
 
     const getBasketTotal = () => {
         let basketTotal = 0
-
+        for (
+            const item in basketItemQuantityList
+        ){
+            if (basketItemQuantityList[item] > 0) {
+                 basketTotal += ((basketItemQuantityList[item] * (productItems.find((product) => {
+                    return product.id === Number(item)
+                 })).price) / 100).toFixed(2)
+            }
+        }
+        return basketTotal;
     }
 
     // create object called context value and add all functions in there
     // makes code more readable
-    const contextValue = { addToBasket, removeFromBasket, productItems, setProductItems };
+    const contextValue = { addToBasket, removeFromBasket, productItems, setProductItems, getBasketTotal };
     return <ShopContext.Provider value={contextValue}>{props.children}</ShopContext.Provider>;
 };
 
