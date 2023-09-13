@@ -1,36 +1,39 @@
 import { createContext, useState } from "react";
-import ProductItem from "../landingComponents/ProductItem";
-import {productItems} from "../../containers/ShopContainer";
 
 // creating a context and return an object: provider + consumer
 export const ShopContext = createContext(null);
 
 const ShopContextProvider = (props) => {
     // object that contains state of how many items are in basket per item
-    const [basketItemQuantityList, setBasketItemQuantityList] = useState(getDefaultCart());
-    const getDefaultCart = () => {
-        let basket = {};
-        for (let i = 1; i < productItems.length ; i ++){
-            basket [i] = 0;
-        }
-        return basket;
-    }
+    const [basketItemQuantityList, setBasketItemQuantityList] = useState({
+        1: 0,
+        2: 0,
+        3: 0,
+        4: 0,
+        5: 0,
+        6: 0,
+        7: 0,
+        8: 0,
+        9: 0,
+        10: 0,
+        11: 0,
+        12: 0,
+        13: 0
+    });
     // adding functionality of adding to basket
     const addToCart = (itemid) => {
         setBasketItemQuantityList((itemQuantityList) => ({
             // cloning basketListQuantity
-            ...itemQuantityList, [itemid]: itemQuantityList[itemid]+1
-
-        }))
-    }
+            ...itemQuantityList,
+            [itemid]: itemQuantityList[itemid] + 1
+        }));
+        console.log(basketItemQuantityList);
+    };
 
     // create object called context value and add all functions in there
     // makes code more readable
-    const contextValue = {addToCart};
-    return <ShopContext.Provider value = {contextValue}>{props.children}</ShopContext.Provider>
-
-
-}
+    const contextValue = { addToCart };
+    return <ShopContext.Provider value={contextValue}>{props.children}</ShopContext.Provider>;
+};
 
 export default ShopContextProvider;
-
