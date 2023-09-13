@@ -21,7 +21,7 @@ const ShopContextProvider = (props) => {
         13: 0
     });
     // adding functionality of adding to basket
-    const addToCart = (itemid) => {
+    const addToBasket = (itemid) => {
         setBasketItemQuantityList((itemQuantityList) => ({
             // cloning basketListQuantity
             ...itemQuantityList,
@@ -29,10 +29,18 @@ const ShopContextProvider = (props) => {
         }));
         console.log(basketItemQuantityList);
     };
+    const removeFromBasket = (itemid) => {
+        setBasketItemQuantityList((itemQuantityList) => ({
+            // cloning basketListQuantity
+            ...itemQuantityList,
+            [itemid]: itemQuantityList[itemid] - 1
+        }));
+        console.log(basketItemQuantityList);
+    };
 
     // create object called context value and add all functions in there
     // makes code more readable
-    const contextValue = { addToCart };
+    const contextValue = { addToBasket, removeFromBasket };
     return <ShopContext.Provider value={contextValue}>{props.children}</ShopContext.Provider>;
 };
 

@@ -24,6 +24,9 @@ const ShopHeader = () => {
                     </i>
                     </Link>
                 </li>
+                <li className="basket-total">
+                    <p>£</p>
+                </li>
             </ul>
         </header>
     );
