@@ -4,7 +4,10 @@ import Filters from "../components/landingComponents/Filters";
 import ProductItem from "../components/landingComponents/ProductItem";
 
 const ShopContainer = () => {
+
+
   const [productItems, setProductItems] = useState([]);
+
 
   const fetchProductItems = async () => {
     const response = await fetch("http://localhost:8080/products");
@@ -79,3 +82,5 @@ const ShopContainer = () => {
 };
 
 export default ShopContainer;
+
+

@@ -1,11 +1,20 @@
 import { createContext, useState } from "react";
+import ProductItem from "../landingComponents/ProductItem";
+import {productItems} from "../../containers/ShopContainer";
 
 // creating a context and return an object: provider + consumer
 export const ShopContext = createContext(null);
 
 const ShopContextProvider = (props) => {
     // object that contains state of how many items are in basket per item
-    const [basketItemQuantityList, setBasketItemQuantityList] = useState();
+    const [basketItemQuantityList, setBasketItemQuantityList] = useState(getDefaultCart());
+    const getDefaultCart = () => {
+        let basket = {};
+        for (let i = 1; i < productItems.length ; i ++){
+            basket [i] = 0;
+        }
+        return basket;
+    }
     // adding functionality of adding to basket
     const addToCart = (itemid) => {
         setBasketItemQuantityList((itemQuantityList) => ({
@@ -22,4 +31,6 @@ const ShopContextProvider = (props) => {
 
 
 }
+
+export default ShopContextProvider;
 

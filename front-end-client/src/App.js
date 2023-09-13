@@ -4,9 +4,11 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Checkout from "./components/checkoutComponents/Checkout";
 import ShopHeader from "./components/ShopHeader";
 import ShopFooter from "./components/shopFooter/ShopFooter";
+import ShopContextProvider from "./components/contexts/ShopContext";
 
 function App() {
     return (
+        <ShopContextProvider>
         <BrowserRouter>
             <div className="App">
                 <ShopHeader />
@@ -19,6 +21,7 @@ function App() {
                 <ShopFooter />
             </div>
         </BrowserRouter>
+        </ShopContextProvider>
     );
 }
 
