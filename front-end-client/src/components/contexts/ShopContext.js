@@ -47,10 +47,10 @@ const ShopContextProvider = (props) => {
             if (basketItemQuantityList[item] > 0) {
                  basketTotal += ((basketItemQuantityList[item] * (productItems.find((product) => {
                     return product.id === Number(item)
-                 })).price) / 100).toFixed(2)
+                 })).price) / 100)
             }
         }
-        return basketTotal;
+        return basketTotal.toFixed(2);
     }
 
     // create object called context value and add all functions in there
