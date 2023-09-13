@@ -3,6 +3,8 @@ import { createContext, useState } from "react";
 // creating a context and return an object: provider + consumer
 export const ShopContext = createContext(null);
 
+let basketTotal = 0;
+
 const ShopContextProvider = (props) => {
     const [productItems, setProductItems] = useState([]);
     // object that contains state of how many items are in basket per item
@@ -21,7 +23,6 @@ const ShopContextProvider = (props) => {
         12: 0,
         13: 0
     });
-    let basketTotal = 0;
     // adding functionality of adding to basket
     const addToBasket = (itemid) => {
         setBasketItemQuantityList((itemQuantityList) => ({
