@@ -25,6 +25,9 @@ public abstract class Product { // need to add entity annotations column and the
     @Column(name = "available_quantity")
     protected int availableQuantity;
 
+    @Column
+    protected String image;
+
     @OneToMany(mappedBy = "product")
     @JsonIgnoreProperties({"product"})
     private List<ProductsOrders> productOrders;
@@ -33,13 +36,14 @@ public abstract class Product { // need to add entity annotations column and the
 
     }
 
-    public Product(String creator, String title, int price, int cost, int availableQuantity) {
+    public Product(String creator, String title, int price, int cost, int availableQuantity, String image) {
         this.creator = creator;
         this.title = title;
         this.price = price;
         this.cost = cost;
         this.availableQuantity = availableQuantity;
         this.productOrders = new ArrayList<>();
+        this.image = image;
     }
 
     public Long getId() {
@@ -96,5 +100,15 @@ public abstract class Product { // need to add entity annotations column and the
 
     public void setAvailableQuantity(int availableQuantity) {
         this.availableQuantity = availableQuantity;
+    }
+
+    public
+    String getImage(){
+        return image;
+    }
+
+    public
+    void setImage(String image){
+        this.image = image;
     }
 }

@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import { ShopContext } from "./contexts/ShopContext";
+import { useContext } from "react";
 
 const ShopHeader = () => {
+    const { getBasketTotal } = useContext(ShopContext);
     return (
         <header>
             <img src="/logo512.png" alt="butterfly and bee logo" height="100" width="100"/>
@@ -23,6 +26,9 @@ const ShopHeader = () => {
                         </span>
                     </i>
                     </Link>
+                </li>
+                <li className="basket-total">
+                    <p>£{getBasketTotal()}</p>
                 </li>
             </ul>
         </header>

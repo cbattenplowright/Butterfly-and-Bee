@@ -16,8 +16,8 @@ public class Book extends Product{
     public Book() {
     }
 
-    public Book(String creator, String title, int price, int cost, int availableQuantity, int yearOfPublication, int noOfPages) {
-        super(creator, title, price, cost, availableQuantity);
+    public Book(String creator, String title, int price, int cost, int availableQuantity, int yearOfPublication, int noOfPages, String image) {
+        super(creator, title, price, cost, availableQuantity, image);
         this.yearOfPublication = yearOfPublication;
         this.noOfPages = noOfPages;
         this.type = "book";

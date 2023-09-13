@@ -49,7 +49,7 @@ public class ProductService {
                 bookDTO.getCost(),
                 bookDTO.getAvailableQuantity(),
                 bookDTO.getYearOfPublication(),
-                bookDTO.getNoOfPages());
+                bookDTO.getNoOfPages(),"");
         return this.productRepository.save(newBook);
     }
 
@@ -61,7 +61,7 @@ public class ProductService {
                 musicDTO.getCost(),
                 musicDTO.getAvailableQuantity(),
                 musicDTO.getDecade(),
-                musicDTO.getSongLength());
+                musicDTO.getSongLength(),"");
         return this.productRepository.save(newSong);
     }
 
@@ -73,7 +73,7 @@ public class ProductService {
                 movieDTO.getCost(),
                 movieDTO.getAvailableQuantity(),
                 movieDTO.getRating(),
-                movieDTO.getRunTime());
+                movieDTO.getRunTime(),"");
         return this.productRepository.save(newMovie);
     }
 

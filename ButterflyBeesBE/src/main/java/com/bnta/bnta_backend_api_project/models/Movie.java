@@ -18,8 +18,8 @@ public class Movie extends Product{
 
     }
 
-    public Movie(String creator, String title, int price, int cost, int availableQuantity, double rating, int runTime) {
-        super(creator, title, price, cost, availableQuantity);
+    public Movie(String creator, String title, int price, int cost, int availableQuantity, double rating, int runTime, String image) {
+        super(creator, title, price, cost, availableQuantity,image);
         this.rating = rating;
         this.runTime = runTime;
         this.type = "movie";

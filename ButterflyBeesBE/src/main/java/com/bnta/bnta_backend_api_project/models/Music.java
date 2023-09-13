@@ -17,8 +17,8 @@ public class Music extends Product{
     public Music() {
     }
 
-    public Music(String creator, String title, int price, int cost, int availableQuantity, String decade, int songLength) {
-        super(creator, title, price, cost, availableQuantity);
+    public Music(String creator, String title, int price, int cost, int availableQuantity, String decade, int songLength, String image) {
+        super(creator, title, price, cost, availableQuantity, image);
         this.decade = decade;
         this.songLength = songLength;
         this.type = "music";
