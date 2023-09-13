@@ -71,11 +71,6 @@ const ShopContainer = () => {
                 fetchProductItems={fetchProductItems}
                 fetchProductItemsBySearchQuery={fetchProductItemsBySearchQuery}
             />
-            {/* */}
-            {/* {filteredProductItems.map((productItem) => (
-                <ProductItem key={productItem.id} productItem={productItem} />
-            ))} */}
-
 
             <ProductList filteredProductItems = {filteredProductItems} />
         </>
