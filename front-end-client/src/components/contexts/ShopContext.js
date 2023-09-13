@@ -58,6 +58,15 @@ const ShopContextProvider = (props) => {
         return basketTotal.toFixed(2);
     };
 
+    const createOrder = async () => {
+        const response = await fetch ("http://localhost:8080/customers/addOrder/1", {
+            method: "PUT",
+            headers: {"Content-Type": "application/json"}
+        });
+        console.log(response);
+
+    }
+
     // create object called context value and add all functions in there
     // makes code more readable
     const contextValue = {
@@ -68,7 +77,8 @@ const ShopContextProvider = (props) => {
         getBasketTotal,
         filteredProductItems,
         setFilteredProductItems,
-        basketItemQuantityList
+        basketItemQuantityList,
+        createOrder
     };
     return <ShopContext.Provider value={contextValue}>{props.children}</ShopContext.Provider>;
 };

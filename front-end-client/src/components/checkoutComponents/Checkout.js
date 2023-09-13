@@ -15,7 +15,7 @@ const Checkout = () => {
   return (
     <div>
       <div>{basketItemComponents}</div>
-      <button onClick={createOrder}>Buy now!</button>
+      <button onClick={() => createOrder()}>Buy now!</button>
     </div>
   );
 };
