@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
 import Filters from "../components/landingComponents/Filters";
-import ProductItem from "../components/landingComponents/ProductItem";
 import { ShopContext } from "../components/contexts/ShopContext";
 import ProductList from "../components/landingComponents/ProductList";
 
@@ -72,7 +71,7 @@ const ShopContainer = () => {
                 fetchProductItemsBySearchQuery={fetchProductItemsBySearchQuery}
             />
 
-            <ProductList filteredProductItems = {filteredProductItems} />
+            <ProductList filteredProductItems={filteredProductItems} />
         </>
     );
 };
