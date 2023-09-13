@@ -38,6 +38,11 @@ const ShopContextProvider = (props) => {
         console.log(basketItemQuantityList);
     };
 
+    const getBasketTotal = () => {
+        let basketTotal = 0
+
+    }
+
     // create object called context value and add all functions in there
     // makes code more readable
     const contextValue = { addToBasket, removeFromBasket };
