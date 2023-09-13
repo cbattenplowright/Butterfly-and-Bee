@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Filters from "../components/landingComponents/Filters";
 import ProductItem from "../components/landingComponents/ProductItem";
+import { ShopContext } from "../components/contexts/ShopContext";
 
 const ShopContainer = () => {
-    const [productItems, setProductItems] = useState([]);
+    // const [productItems, setProductItems] = useState([]);
+    const {productItems, setProductItems} = useContext(ShopContext);
 
     const fetchProductItems = async () => {
         const response = await fetch("http://localhost:8080/products");

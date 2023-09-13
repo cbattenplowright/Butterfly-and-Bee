@@ -4,6 +4,7 @@ import { createContext, useState } from "react";
 export const ShopContext = createContext(null);
 
 const ShopContextProvider = (props) => {
+    const [productItems, setProductItems] = useState([]);
     // object that contains state of how many items are in basket per item
     const [basketItemQuantityList, setBasketItemQuantityList] = useState({
         1: 0,
@@ -45,7 +46,7 @@ const ShopContextProvider = (props) => {
 
     // create object called context value and add all functions in there
     // makes code more readable
-    const contextValue = { addToBasket, removeFromBasket };
+    const contextValue = { addToBasket, removeFromBasket, productItems, setProductItems };
     return <ShopContext.Provider value={contextValue}>{props.children}</ShopContext.Provider>;
 };
 
