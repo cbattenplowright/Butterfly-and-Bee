@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import Filters from "../components/landingComponents/Filters";
 import ProductItem from "../components/landingComponents/ProductItem";
 import { ShopContext } from "../components/contexts/ShopContext";
+import ProductList from "../components/landingComponents/ProductList";
 
 const ShopContainer = () => {
     // const [productItems, setProductItems] = useState([]);
@@ -71,9 +72,12 @@ const ShopContainer = () => {
                 fetchProductItemsBySearchQuery={fetchProductItemsBySearchQuery}
             />
             {/* */}
-            {filteredProductItems.map((productItem) => (
+            {/* {filteredProductItems.map((productItem) => (
                 <ProductItem key={productItem.id} productItem={productItem} />
-            ))}
+            ))} */}
+
+
+            <ProductList filteredProductItems = {filteredProductItems} />
         </>
     );
 };

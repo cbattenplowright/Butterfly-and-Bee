@@ -1,8 +1,8 @@
 import ProductItem from "./ProductItem";
 
-const ProductList = ({ productItems }) => {
+const ProductList = ({ filteredProductItems }) => {
     //Added safe navigation operator "?" which solved undefined map error
-  const productItemComponents = productItems?.map((productItem) => {
+  const productItemComponents = filteredProductItems?.map((productItem) => {
     return <ProductItem key={productItem.id} productItem={productItem} />;
   });
 
