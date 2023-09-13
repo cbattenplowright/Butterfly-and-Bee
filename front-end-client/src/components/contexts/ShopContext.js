@@ -67,7 +67,8 @@ const ShopContextProvider = (props) => {
         setProductItems,
         getBasketTotal,
         filteredProductItems,
-        setFilteredProductItems
+        setFilteredProductItems,
+        basketItemQuantityList
     };
     return <ShopContext.Provider value={contextValue}>{props.children}</ShopContext.Provider>;
 };
