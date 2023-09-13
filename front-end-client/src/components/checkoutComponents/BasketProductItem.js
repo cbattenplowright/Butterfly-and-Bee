@@ -12,7 +12,7 @@ const BasketProductItem = ({productItem}) => {
                 <p>Available quantity: {productItem.availableQuantity}</p>
                 <button className="add-to-basket" onClick={() => {
                     addToBasket(productItem.id)}}>
-                    Add to basket
+                    Add
                 </button>
             </div>
         );
