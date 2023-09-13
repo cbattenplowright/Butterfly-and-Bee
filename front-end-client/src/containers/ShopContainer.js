@@ -5,33 +5,35 @@ import { ShopContext } from "../components/contexts/ShopContext";
 
 const ShopContainer = () => {
     // const [productItems, setProductItems] = useState([]);
-    const {productItems, setProductItems} = useContext(ShopContext);
+    const { setProductItems, filteredProductItems, setFilteredProductItems } =
+        useContext(ShopContext);
 
     const fetchProductItems = async () => {
         const response = await fetch("http://localhost:8080/products");
         const data = await response.json();
         setProductItems(data);
+        setFilteredProductItems(data);
         console.log(data);
     };
 
     const fetchMovies = async () => {
         const response = await fetch("http://localhost:8080/products/movies");
         const data = await response.json();
-        setProductItems(data);
+        setFilteredProductItems(data);
         console.log(data);
     };
 
     const fetchBooks = async () => {
         const response = await fetch("http://localhost:8080/products/books");
         const data = await response.json();
-        setProductItems(data);
+        setFilteredProductItems(data);
         console.log(data);
     };
 
     const fetchSongs = async () => {
         const response = await fetch("http://localhost:8080/products/songs");
         const data = await response.json();
-        setProductItems(data);
+        setFilteredProductItems(data);
         console.log(data);
     };
 
@@ -49,7 +51,7 @@ const ShopContainer = () => {
 
             const combinedData = [...movieData, ...bookData, ...musicData];
 
-            setProductItems(combinedData);
+            setFilteredProductItems(combinedData);
         } catch (error) {
             console.error("No Product found", error);
         }
@@ -69,7 +71,7 @@ const ShopContainer = () => {
                 fetchProductItemsBySearchQuery={fetchProductItemsBySearchQuery}
             />
             {/* */}
-            {productItems.map((productItem) => (
+            {filteredProductItems.map((productItem) => (
                 <ProductItem key={productItem.id} productItem={productItem} />
             ))}
         </>

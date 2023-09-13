@@ -3,10 +3,9 @@ import { createContext, useState } from "react";
 // creating a context and return an object: provider + consumer
 export const ShopContext = createContext(null);
 
-let basketTotal = 0;
-
 const ShopContextProvider = (props) => {
     const [productItems, setProductItems] = useState([]);
+    const [filteredProductItems, setFilteredProductItems] = useState([]);
     // object that contains state of how many items are in basket per item
     const [basketItemQuantityList, setBasketItemQuantityList] = useState({
         1: 0,
@@ -42,6 +41,7 @@ const ShopContextProvider = (props) => {
     };
 
     const getBasketTotal = () => {
+        let basketTotal = 0;
         for (const item in basketItemQuantityList) {
             if (
                 basketItemQuantityList[item] > 0 &&
@@ -65,7 +65,9 @@ const ShopContextProvider = (props) => {
         removeFromBasket,
         productItems,
         setProductItems,
-        getBasketTotal
+        getBasketTotal,
+        filteredProductItems,
+        setFilteredProductItems
     };
     return <ShopContext.Provider value={contextValue}>{props.children}</ShopContext.Provider>;
 };
