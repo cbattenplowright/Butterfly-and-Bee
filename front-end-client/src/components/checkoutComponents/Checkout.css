@@ -1,5 +1,5 @@
 /* Checkout.css */
-.checkout-container {
+.checkout-page {
   display: flex;
   flex-direction: row; /* Change the direction to horizontal */
   justify-content: space-between; /* Spread items horizontally */
@@ -30,15 +30,14 @@
 }
 .basket-list {
   display: flex;
-  width: 715px;
-  height: 508px;
   padding: 20px 24px;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+  flex: 1;
 }
 .order-summary {
-  width: 505px;
+  width: 30%;
   padding: 20px 24px;
   flex-direction: column;
   justify-content: right;
