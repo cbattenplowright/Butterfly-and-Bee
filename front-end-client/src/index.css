@@ -38,7 +38,7 @@ main {
   background-color: #fffbdb;
 }
 
-.material-icons-home{
+.material-icons-home {
   color: white;
 }
 
@@ -46,13 +46,20 @@ main {
   color: white;
 }
 
-#nav-bar{
-  margin-top: 23px;
-  padding-top: 20px;
+#nav-bar {
+  padding-top: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  margin-top: 35px;
+  padding-inline-start: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
 }
 
 .images {
   display: flex;
   padding-top: 50px;
 }
-
