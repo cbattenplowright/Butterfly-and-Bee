@@ -119,6 +119,12 @@ const ShopContextProvider = (props) => {
         });
     };
 
+    const updateItemQuantity = (itemQuantity, productId) => {
+        setBasketItemQuantityList((itemQuantityList) => ({
+            ...itemQuantityList, [productId]: itemQuantity
+        }))
+    }
+
     const contextValue = {
         addToBasket,
         removeFromBasket,
@@ -130,7 +136,8 @@ const ShopContextProvider = (props) => {
         basketItemQuantityList,
         createOrder,
         modal,
-        toggleModal
+        toggleModal,
+        updateItemQuantity
     };
     return <ShopContext.Provider value={contextValue}>{props.children}</ShopContext.Provider>;
 };

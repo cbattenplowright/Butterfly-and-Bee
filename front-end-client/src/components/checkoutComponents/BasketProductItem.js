@@ -3,7 +3,7 @@ import { ShopContext } from "../contexts/ShopContext";
 
 const BasketProductItem = ({ productItem }) => {
   // links create context from ShopContext
-  const { addToBasket } = useContext(ShopContext);
+  const { addToBasket, removeFromBasket, basketItemQuantityList, updateItemQuantity } = useContext(ShopContext);
   return (
     <div className="basket-product-item">
       <img src={productItem.image} height={"200"} />
@@ -19,6 +19,18 @@ const BasketProductItem = ({ productItem }) => {
         }}
       >
         Add
+      </button>
+      <input type="number" min={1} max={productItem.availableQuantity} value={basketItemQuantityList[productItem.id]}
+      onChange={(event) => {
+        updateItemQuantity(Number.parseInt(event.target.value), productItem.id);
+      }}/>
+      <button
+        className="remove-from-basket"
+        onClick={() => {
+          removeFromBasket(productItem.id);
+        }}
+      >
+        Subtract
       </button>
     </div>
   );
