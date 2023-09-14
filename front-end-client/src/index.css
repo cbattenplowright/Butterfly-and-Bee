@@ -46,12 +46,13 @@ main {
   color: white;
 }
 
-.nav-bar{
+#nav-bar{
   margin-top: 23px;
+  padding-top: 20px;
 }
 
 .images {
   display: flex;
-  
+  padding-top: 50px;
 }
 
