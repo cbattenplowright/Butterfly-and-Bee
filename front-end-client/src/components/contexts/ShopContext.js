@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 export const ShopContext = createContext(null);
 
 const ShopContextProvider = (props) => {
+    const [modal, setModal] = useState(false);
     const [productItems, setProductItems] = useState([]);
     const [filteredProductItems, setFilteredProductItems] = useState([]);
     // object that contains state of how many items are in basket per item
@@ -23,6 +24,7 @@ const ShopContextProvider = (props) => {
         12: 0,
         13: 0
     });
+
     // adding functionality of adding to basket
     const addToBasket = (itemid) => {
         setBasketItemQuantityList((itemQuantityList) => ({
@@ -121,7 +123,9 @@ const ShopContextProvider = (props) => {
         filteredProductItems,
         setFilteredProductItems,
         basketItemQuantityList,
-        createOrder
+        createOrder,
+        modal,
+        setModal
     };
     return <ShopContext.Provider value={contextValue}>{props.children}</ShopContext.Provider>;
 };

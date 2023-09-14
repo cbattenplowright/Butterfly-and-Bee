@@ -3,55 +3,36 @@ import { ShopContext } from "../contexts/ShopContext";
 import { useContext } from "react";
 
 const OrderConfirmation = () => {
-    // const [orderId, customerEmail] = useContext;
+    const { modal, setModal } = useContext(ShopContext);
 
-    const modal = document.querySelector(".modal");
-    const overlay = document.querySelector(".overlay");
-    const openModalBtn = document.querySelector(".btn-open");
-    const closeModalBtn = document.querySelector(".btn-close");
-
-    // close modal function
-    const closeModal = function () {
-        modal.classList.add("hidden");
-        overlay.classList.add("hidden");
+    const toggleModal = () => {
+        setModal(!modal);
     };
 
-    // open modal function
-    const openModal = function () {
-        modal.classList.remove("hidden");
-        overlay.classList.remove("hidden");
-    };
+    if (modal) {
+        document.body.classList.add("active-modal");
+    } else {
+        document.body.classList.remove("active-modal");
+    }
 
     return (
         <>
-            <section className="modal hidden">
-                <div className="flex">
-                    <button
-                        className="btn-close"
-                        onClick={() => {
-                            closeModal();
-                        }}
-                    >
-                        X
-                    </button>
-                </div>
-                <div>
-                    <h3>Order Confirmation:</h3>
-                    {/* Import orderId and customer email from ShopContext */}
-                    {/* <p>Order Id: ${orderId}</p> */}
-                    <h3>You will receive a order confirmation to: </h3>
-                    {/* <p>{customerEmail}</p> */}
-                </div>
-            </section>
-            <div className="overlay hidden"></div>
-            <button
-                className="btn btn-open"
-                onClick={() => {
-                    openModal();
-                }}
-            >
-                Open Order Confirmation
+            <button onClick={toggleModal} className="btn-modal">
+                Open
             </button>
+
+            {modal && (
+                <div className="modal">
+                    <div onClick={toggleModal} className="overlay"></div>
+                    <div className="modal-content">
+                        <h2>Order Confirmation</h2>
+                        <p>Your order is confirmed</p>
+                        <button className="close-modal" onClick={toggleModal}>
+                            Close
+                        </button>
+                    </div>
+                </div>
+            )}
         </>
     );
 };

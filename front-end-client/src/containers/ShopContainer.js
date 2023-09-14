@@ -71,9 +71,7 @@ const ShopContainer = () => {
                 fetchProductItems={fetchProductItems}
                 fetchProductItemsBySearchQuery={fetchProductItemsBySearchQuery}
             />
-
             <OrderConfirmation />
-
             <ProductList filteredProductItems={filteredProductItems} />
         </>
     );
