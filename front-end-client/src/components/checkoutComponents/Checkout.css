@@ -33,6 +33,7 @@
   border-radius: 20px;
   border: 1px solid rgba(0, 0, 0, 0.10);
   justify-content: center; /* Center items vertically */
+  background-color: white;
 }
 
 .basket-list {
@@ -41,6 +42,7 @@
   border: 1px solid #ccc; /* Add a border for the container */
   border-radius: 8px; /* Add some border-radius for aesthetics */
   padding: 15px;
+  background-color: white;
 }
 
 .items-grid {

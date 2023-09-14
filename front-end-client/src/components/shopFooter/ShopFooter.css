@@ -1,5 +1,5 @@
 .shop-footer {
-    background-color: rgb(255, 248, 166);
+    background-color: #30362f;
     display: flex;
     justify-content: space-around;
     align-content: center;
@@ -9,14 +9,17 @@
     font-family: 'Cedarville Cursive', cursive;
     display: flex;
     font-size: xx-large;
+    color: white;
 }
 
 .logo {
     height: 35px;
     width: 35px;
+    fill: white;
 }
 
 .social-media-item-container {
     display: flex;
     gap: 20px;
 }
+

@@ -2,6 +2,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
     gap: 20px; 
+    margin: 20px;
+  
   }
 
   .add-to-basket {
@@ -18,12 +20,12 @@
     }
   }
   .product-item h4 {
-    margin: 0; 
+    margin: 0 0 5 0;
     font-size: 18px; 
     font-family: Arial, sans-serif; 
     font-size: 16px; 
     color: #333; 
-    margin-left: 20px
+    /* margin-left: 20px */
   }
   
   
@@ -43,5 +45,11 @@
     flex-direction: column; 
     align-items: center; 
     text-align: center; 
-    margin-left: 20px; 
+    /* margin-left: 20px;  */
+    border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  padding: 10px;
+  background-color: white;
+
+
   }
