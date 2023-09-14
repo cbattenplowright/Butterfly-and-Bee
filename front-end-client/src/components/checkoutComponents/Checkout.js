@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { ShopContext } from "../contexts/ShopContext";
 import BasketList from "./BasketList";
+import '/Checkout.css'
 
 const Checkout = () => {
   const { productItems, basketItemQuantityList, createOrder } =
@@ -11,7 +12,7 @@ const Checkout = () => {
         productItems={productItems}
         basketItemQuantityList={basketItemQuantityList}
       />
-      <button onClick={() => createOrder()}>Buy now!</button>
+      <button className="buy-now" onClick={() => createOrder()}>Buy now!</button>
     </div>
   );
 };
