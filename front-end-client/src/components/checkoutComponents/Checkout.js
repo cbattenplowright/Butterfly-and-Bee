@@ -6,7 +6,8 @@ import "./Checkout.css";
 
 const Checkout = () => {
     const navigate = useNavigate();
-    const { productItems, basketItemQuantityList, createOrder } = useContext(ShopContext);
+    const { productItems, basketItemQuantityList, createOrder, toggleModal } =
+        useContext(ShopContext);
     return (
         <div>
             <BasketList
@@ -14,10 +15,10 @@ const Checkout = () => {
                 basketItemQuantityList={basketItemQuantityList}
             />
             <button
-                className="buy-now-button"
                 onClick={() => {
                     createOrder();
                     navigate("/");
+                    toggleModal();
                 }}
             >
                 Buy now!
