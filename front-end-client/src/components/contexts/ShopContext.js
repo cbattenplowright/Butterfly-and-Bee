@@ -6,6 +6,11 @@ export const ShopContext = createContext(null);
 
 const ShopContextProvider = (props) => {
     const [modal, setModal] = useState(false);
+
+    const toggleModal = () => {
+        setModal(!modal);
+    };
+
     const [productItems, setProductItems] = useState([]);
     const [filteredProductItems, setFilteredProductItems] = useState([]);
     // object that contains state of how many items are in basket per item
@@ -125,7 +130,7 @@ const ShopContextProvider = (props) => {
         basketItemQuantityList,
         createOrder,
         modal,
-        setModal
+        toggleModal
     };
     return <ShopContext.Provider value={contextValue}>{props.children}</ShopContext.Provider>;
 };

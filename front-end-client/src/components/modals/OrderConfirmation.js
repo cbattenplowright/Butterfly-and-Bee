@@ -3,11 +3,7 @@ import { ShopContext } from "../contexts/ShopContext";
 import { useContext } from "react";
 
 const OrderConfirmation = () => {
-    const { modal, setModal } = useContext(ShopContext);
-
-    const toggleModal = () => {
-        setModal(!modal);
-    };
+    const { modal, toggleModal } = useContext(ShopContext);
 
     if (modal) {
         document.body.classList.add("active-modal");
@@ -17,9 +13,9 @@ const OrderConfirmation = () => {
 
     return (
         <>
-            <button onClick={toggleModal} className="btn-modal">
+            {/* <button onClick={toggleModal} className="btn-modal">
                 Open
-            </button>
+            </button> */}
 
             {modal && (
                 <div className="modal">

@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const Checkout = () => {
     const navigate = useNavigate();
-    const { productItems, basketItemQuantityList, createOrder, openModal } =
+    const { productItems, basketItemQuantityList, createOrder, toggleModal } =
         useContext(ShopContext);
     return (
         <div>
@@ -16,8 +16,8 @@ const Checkout = () => {
             <button
                 onClick={() => {
                     createOrder();
-                    // navigate("/");
-                    openModal();
+                    navigate("/");
+                    toggleModal();
                 }}
             >
                 Buy now!
