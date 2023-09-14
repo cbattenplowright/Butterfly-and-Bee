@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { Component, createContext, useState } from "react";
 
 // creating a context and return an object: provider + consumer
 export const ShopContext = createContext(null);
@@ -75,32 +75,43 @@ const ShopContextProvider = (props) => {
       console.log(itemid);
       console.log(quantitySold);
       if (quantitySold > 0){
-        const addQuantityToProductOrder = await fetch(
+        const linkProdOrdersResponse = await fetch(
             `http://localhost:8080/orders/linkProdOrders/${itemid}/${quantitySold}`,
             {
               method: "PUT",
             }
           );
-          console.log(await addQuantityToProductOrder.json());
+          const linkProdOrdersResponseData = await linkProdOrdersResponse.json();
+          const productOrderId = linkProdOrdersResponseData.id
+
+          const linkOrderProdOrderResponse = await fetch(
+            `http://localhost:8080/orders/linkOrderProdOrder/${orderId}/${productOrderId}`,
+            {
+              method: "PUT",
+            }
+          );
+
+            const linkOrderProdOrderResponseData = await linkOrderProdOrderResponse.json();
+          
+            console.log(linkOrderProdOrderResponseData);
+            console.log(linkProdOrdersResponseData);
+        
       }
+
+    
     }
 
-    // const response2 = await fetch(
-    //   "http://localhost:8080/orders/linkProdOrders/1/100",
-    //   {
-    //     method: "PUT",
-    //   }
-    // );
+  }
 
-    const response3 = await fetch(
-      "http://localhost:8080/orders/linkOrderProdOrder/3/1",
-      {
-        method: "PUT",
-      }
-    );
+  //   const response3 = await fetch(
+  //     "http://localhost:8080/orders/linkOrderProdOrder/3/1",
+  //     {
+  //       method: "PUT",
+  //     }
+  //   );
 
-    console.log(await response3.json());
-  };
+  //   console.log(await response3.json());
+  // };
 
   // create object called context value and add all functions in there
   // makes code more readable
