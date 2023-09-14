@@ -123,7 +123,6 @@ const ShopContextProvider = (props) => {
         setBasketItemQuantityList((itemQuantityList) => ({
             ...itemQuantityList, [productId]: itemQuantity
         }))
-
     }
 
     const contextValue = {
