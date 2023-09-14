@@ -1,4 +1,9 @@
 import ProductItem from "./ProductItem";
+import './ProductList.css'
+
+//ALL THE PRODUCTS
+//DO GRID HERE
+//ID = #product-list
 
 const ProductList = ({ filteredProductItems }) => {
     //Added safe navigation operator "?" which solved undefined map error
