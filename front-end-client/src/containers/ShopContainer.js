@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import Filters from "../components/landingComponents/Filters";
 import { ShopContext } from "../components/contexts/ShopContext";
 import ProductList from "../components/landingComponents/ProductList";
+import OrderConfirmation from "../components/modals/OrderConfirmation";
 
 const ShopContainer = () => {
     // const [productItems, setProductItems] = useState([]);
@@ -70,6 +71,8 @@ const ShopContainer = () => {
                 fetchProductItems={fetchProductItems}
                 fetchProductItemsBySearchQuery={fetchProductItemsBySearchQuery}
             />
+
+            <OrderConfirmation />
 
             <ProductList filteredProductItems={filteredProductItems} />
         </>

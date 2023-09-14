@@ -1,4 +1,10 @@
+import "./OrderConfirmation.css";
+import { ShopContext } from "../contexts/ShopContext";
+import { useContext } from "react";
+
 const OrderConfirmation = () => {
+    const [orderId, customerEmail] = useContext;
+
     return (
         <>
             <section className="modal hidden">
