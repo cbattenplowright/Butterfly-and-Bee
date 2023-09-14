@@ -13,24 +13,25 @@ const BasketProductItem = ({ productItem }) => {
       <p>Available quantity: {productItem.availableQuantity}</p>
       </div>
       <button
-        className="add-to-basket"
+        className="quantity-button"
         onClick={() => {
-          addToBasket(productItem.id);
+          removeFromBasket(productItem.id);
         }}
       >
-        Add
+        -
       </button>
       <input type="number" min={1} max={productItem.availableQuantity} value={basketItemQuantityList[productItem.id]}
       onChange={(event) => {
         updateItemQuantity(Number.parseInt(event.target.value), productItem.id);
       }}/>
+
       <button
-        className="remove-from-basket"
+        className="quantity-button"
         onClick={() => {
-          removeFromBasket(productItem.id);
+          addToBasket(productItem.id);
         }}
       >
-        Subtract
+        +
       </button>
     </div>
   );
