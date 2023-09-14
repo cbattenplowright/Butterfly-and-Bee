@@ -97,24 +97,28 @@ const ShopContextProvider = (props) => {
             console.log(linkProdOrdersResponseData);
         
       }
-
     
     }
 
+    setBasketItemQuantityList({
+      1: 0,
+      2: 0,
+      3: 0,
+      4: 0,
+      5: 0,
+      6: 0,
+      7: 0,
+      8: 0,
+      9: 0,
+      10: 0,
+      11: 0,
+      12: 0,
+      13: 0,
+    });
+
   }
 
-  //   const response3 = await fetch(
-  //     "http://localhost:8080/orders/linkOrderProdOrder/3/1",
-  //     {
-  //       method: "PUT",
-  //     }
-  //   );
 
-  //   console.log(await response3.json());
-  // };
-
-  // create object called context value and add all functions in there
-  // makes code more readable
   const contextValue = {
     addToBasket,
     removeFromBasket,
