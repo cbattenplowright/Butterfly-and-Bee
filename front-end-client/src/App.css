@@ -3,3 +3,12 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+.App {
+  position: relative;
+  min-height: 100vh;
+}
+
+main {
+  padding-bottom: 75px;
+}

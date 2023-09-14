@@ -14,7 +14,25 @@ code {
 
 ul {
   list-style: none;
-  margin-top: 23px;
+}
+
+.menu-icon {
+  height: 40px;
+  width: 40px;
+  background-color: #42783f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-total {
+  height: 40px;
+  width: 100px;
+  background-color: #42783f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
 }
 
 header {
@@ -35,10 +53,10 @@ header {
 }
 
 main {
-  background-color: #fffbdb;
+  background-color: #fffdee;
 }
 
-.material-icons-home{
+.material-icons-home {
   color: white;
 }
 
@@ -46,13 +64,16 @@ main {
   color: white;
 }
 
-#nav-bar{
-  margin-top: 23px;
-  padding-top: 20px;
+#nav-bar {
+  padding-inline-start: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
 }
 
 .images {
   display: flex;
   padding-top: 50px;
 }
-

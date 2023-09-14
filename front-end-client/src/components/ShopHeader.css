@@ -1,0 +1,28 @@
+ul {
+    list-style: none;
+    gap: 25px
+}
+
+.menu-icon {
+    height: 40px;
+    width: 40px;
+    background-color: #4f5b4d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+
+    &:hover {
+        background-color: #a59132;
+    }
+}
+
+.menu-total {
+    height: 40px;
+    width: 100px;
+    background-color: #4f5b4d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+}
