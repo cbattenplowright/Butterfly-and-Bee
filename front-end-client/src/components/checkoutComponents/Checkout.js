@@ -1,8 +1,10 @@
 import { useContext } from "react";
 import { ShopContext } from "../contexts/ShopContext";
 import BasketList from "./BasketList";
+import { useNavigate } from "react-router-dom";
 
 const Checkout = () => {
+  const navigate = useNavigate();
   const { productItems, basketItemQuantityList, createOrder } =
     useContext(ShopContext);
   return (
@@ -11,7 +13,7 @@ const Checkout = () => {
         productItems={productItems}
         basketItemQuantityList={basketItemQuantityList}
       />
-      <button onClick={() => createOrder()}>Buy now!</button>
+      <button onClick={() => {createOrder(); navigate("/")}} >Buy now!</button>
     </div>
   );
 };

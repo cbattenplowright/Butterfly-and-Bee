@@ -1,4 +1,5 @@
 import { Component, createContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 // creating a context and return an object: provider + consumer
 export const ShopContext = createContext(null);
@@ -115,6 +116,8 @@ const ShopContextProvider = (props) => {
       12: 0,
       13: 0,
     });
+
+
 
   }
 
