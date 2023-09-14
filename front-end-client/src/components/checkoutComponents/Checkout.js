@@ -3,7 +3,6 @@ import { ShopContext } from "../contexts/ShopContext";
 import BasketList from "./BasketList";
 import { useNavigate } from "react-router-dom";
 import "./Checkout.css";
-import { useNavigate } from "react-router-dom";
 
 const Checkout = () => {
     const navigate = useNavigate();
