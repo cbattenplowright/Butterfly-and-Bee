@@ -1,9 +1,16 @@
-import { createContext, useState } from "react";
+import { Component, createContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 // creating a context and return an object: provider + consumer
 export const ShopContext = createContext(null);
 
 const ShopContextProvider = (props) => {
+    const [modal, setModal] = useState(false);
+
+    const toggleModal = () => {
+        setModal(!modal);
+    };
+
     const [productItems, setProductItems] = useState([]);
     const [filteredProductItems, setFilteredProductItems] = useState([]);
     // object that contains state of how many items are in basket per item
@@ -22,6 +29,7 @@ const ShopContextProvider = (props) => {
         12: 0,
         13: 0
     });
+
     // adding functionality of adding to basket
     const addToBasket = (itemid) => {
         setBasketItemQuantityList((itemQuantityList) => ({
@@ -58,8 +66,65 @@ const ShopContextProvider = (props) => {
         return basketTotal.toFixed(2);
     };
 
-    // create object called context value and add all functions in there
-    // makes code more readable
+    const createOrder = async () => {
+        const orderResponse = await fetch("http://localhost:8080/customers/addOrder/1", {
+            method: "PUT"
+        });
+
+        const orderResponseData = await orderResponse.json();
+        const orderId = orderResponseData.id;
+
+        for (let itemid of Object.keys(basketItemQuantityList)) {
+            const quantitySold = basketItemQuantityList[itemid];
+            console.log(itemid);
+            console.log(quantitySold);
+            if (quantitySold > 0) {
+                const linkProdOrdersResponse = await fetch(
+                    `http://localhost:8080/orders/linkProdOrders/${itemid}/${quantitySold}`,
+                    {
+                        method: "PUT"
+                    }
+                );
+                const linkProdOrdersResponseData = await linkProdOrdersResponse.json();
+                const productOrderId = linkProdOrdersResponseData.id;
+
+                const linkOrderProdOrderResponse = await fetch(
+                    `http://localhost:8080/orders/linkOrderProdOrder/${orderId}/${productOrderId}`,
+                    {
+                        method: "PUT"
+                    }
+                );
+
+                const linkOrderProdOrderResponseData = await linkOrderProdOrderResponse.json();
+
+                console.log(linkOrderProdOrderResponseData);
+                console.log(linkProdOrdersResponseData);
+            }
+        }
+
+        setBasketItemQuantityList({
+            1: 0,
+            2: 0,
+            3: 0,
+            4: 0,
+            5: 0,
+            6: 0,
+            7: 0,
+            8: 0,
+            9: 0,
+            10: 0,
+            11: 0,
+            12: 0,
+            13: 0
+        });
+    };
+
+    const updateItemQuantity = (itemQuantity, productId) => {
+        setBasketItemQuantityList((itemQuantityList) => ({
+            ...itemQuantityList, [productId]: itemQuantity
+        }))
+    }
+
     const contextValue = {
         addToBasket,
         removeFromBasket,
@@ -67,7 +132,12 @@ const ShopContextProvider = (props) => {
         setProductItems,
         getBasketTotal,
         filteredProductItems,
-        setFilteredProductItems
+        setFilteredProductItems,
+        basketItemQuantityList,
+        createOrder,
+        modal,
+        toggleModal,
+        updateItemQuantity
     };
     return <ShopContext.Provider value={contextValue}>{props.children}</ShopContext.Provider>;
 };

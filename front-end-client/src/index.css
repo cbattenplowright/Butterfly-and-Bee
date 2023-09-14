@@ -14,20 +14,45 @@ code {
 
 ul {
   list-style: none;
+  margin-top: 23px;
 }
 
 header {
-  background-color: rgb(255, 248, 166);
+  background-color: #30362f;
   font-family: 'Cedarville Cursive', cursive;
   display: flex;
   font-size: xx-large;
   align-items: center;
   justify-content: center;
-  justify-content: space-between;
-  border: 2px solid #000;
+  /* justify-content: space-between; */
+  border: 2px solid black;
   padding: 10px;
+  height: 195px;
+  color: white;
+  padding-left: 200px;
+  gap: 375px;
+
 }
 
 main {
-  background-color: rgb(195, 241, 255);
+  background-color: #fffbdb;
 }
+
+.material-icons-home{
+  color: white;
+}
+
+.material-icons-basket {
+  color: white;
+}
+
+#nav-bar{
+  margin-top: 23px;
+  padding-top: 20px;
+}
+
+.images {
+  display: flex;
+  padding-top: 50px;
+}
+
