@@ -40,6 +40,7 @@
   overflow-y: auto; /* Enable vertical scrolling */
   border: 1px solid #ccc; /* Add a border for the container */
   border-radius: 8px; /* Add some border-radius for aesthetics */
+  padding: 15px;
 }
 
 .items-grid {
@@ -58,4 +59,9 @@
 
 .product-text-info {
   margin-left: 20px;
+}
+
+.order-summary h4 {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+  padding-bottom: 10px; /* Adjust the padding as needed for spacing */
 }

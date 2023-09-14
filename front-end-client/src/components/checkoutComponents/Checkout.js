@@ -15,8 +15,8 @@ const Checkout = () => {
             />
             </div>
             <div className="order-summary">
-                <h5>Order Summary</h5>
-                <h6>Total: £{getBasketTotal()}</h6>
+                <h4>Order Summary</h4>
+                <h5>Total: £{getBasketTotal()}</h5>
                 <button className="buy-now-button"
                 onClick={() => {
                     createOrder();
