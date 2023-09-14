@@ -14,7 +14,25 @@ code {
 
 ul {
   list-style: none;
-  margin-top: 23px;
+}
+
+.menu-icon {
+  height: 40px;
+  width: 40px;
+  background-color: #42783f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-total {
+  height: 40px;
+  width: 100px;
+  background-color: #42783f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
 }
 
 header {
@@ -35,7 +53,7 @@ header {
 }
 
 main {
-  background-color: #fffbdb;
+  background-color: #fffdee;
 }
 
 .material-icons-home {
@@ -47,10 +65,6 @@ main {
 }
 
 #nav-bar {
-  padding-top: 0px;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-  margin-top: 35px;
   padding-inline-start: 0px;
   display: flex;
   flex-direction: column;
