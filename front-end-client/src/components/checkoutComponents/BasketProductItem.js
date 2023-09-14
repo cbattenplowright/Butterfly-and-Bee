@@ -3,7 +3,7 @@ import { ShopContext } from "../contexts/ShopContext";
 
 const BasketProductItem = ({ productItem }) => {
   // links create context from ShopContext
-  const { addToBasket, removeFromBasket } = useContext(ShopContext);
+  const { addToBasket, removeFromBasket, basketItemQuantityList } = useContext(ShopContext);
   return (
     <div className="product-item">
       <h4>{productItem.title}</h4>
@@ -18,6 +18,7 @@ const BasketProductItem = ({ productItem }) => {
       >
         Add
       </button>
+      <input type="number" value={basketItemQuantityList[productItem.id]}/>
       <button
         className="remove-from-basket"
         onClick={() => {
