@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { ShopContext } from "../contexts/ShopContext";
+import './ProductList.css'
 
 const ProductItem = ({ productItem }) => {
     // links create context from ShopContext

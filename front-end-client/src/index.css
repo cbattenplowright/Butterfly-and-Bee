@@ -26,6 +26,7 @@ header {
   justify-content: space-between;
   border: 2px solid #000;
   padding: 10px;
+  height: 195px;
 }
 
 main {
