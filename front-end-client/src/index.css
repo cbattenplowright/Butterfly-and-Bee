@@ -24,11 +24,13 @@ header {
   font-size: xx-large;
   align-items: center;
   justify-content: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   border: 2px solid black;
   padding: 10px;
   height: 195px;
   color: white;
+  padding-left: 200px;
+  gap: 375px;
 
 }
 
@@ -50,5 +52,6 @@ main {
 
 .images {
   display: flex;
+  
 }
 
