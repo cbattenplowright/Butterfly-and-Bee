@@ -1,0 +1,14 @@
+ul {
+    list-style: none;
+}
+
+header {
+    background-color: rgb(255, 248, 166);
+    font-family: 'Cedarville Cursive', cursive;
+    display: flex;
+    font-size: xx-large;
+    align-items: center;
+    justify-content: flex-end;
+    border: 2px solid #000;
+    height: 195px;
+}
