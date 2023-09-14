@@ -8,8 +8,9 @@ const ShopHeader = () => {
         <header>
             {/* <img src="images/icons8-bee-50 (1).png" alt="butterfly and bee logo" height="50" width="50"/> */}
             <div className ="images">
+            <img src="images/icons8-bee-50 (1).png" alt="butterfly and bee logo" height="50" width="50"/>    
             <h1>Butterfly & Bee</h1>
-            <img src="images/icons8-bee-50 (1).png" alt="butterfly and bee logo" height="50" width="50"/>
+            <img src="images/icons8-butterfly-50 (2).png" alt="butterfly and bee logo" height="50" width="50"/>
             </div>
             <ul id="nav-bar">
                 <li>
