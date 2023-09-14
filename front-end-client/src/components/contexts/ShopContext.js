@@ -5,9 +5,8 @@ import { useNavigate } from "react-router-dom";
 export const ShopContext = createContext(null);
 
 const ShopContextProvider = (props) => {
-    const [orderId, setOrderId] = useState();
-    const [customerEmail, setCustomerEmail] = useState("");
-
+    const [customerOrderId, setCustomerOrderId] = useState();
+    const [customerEmail, setCustomerEmail] = useState();
     const [modal, setModal] = useState(false);
 
     const toggleModal = () => {
@@ -75,8 +74,9 @@ const ShopContextProvider = (props) => {
         });
 
         const orderResponseData = await orderResponse.json();
-        setOrderId(orderResponseData.id);
+        const orderId = orderResponseData.id;
         setCustomerEmail(orderResponseData.customer.email);
+        setCustomerOrderId(orderId);
 
         for (let itemid of Object.keys(basketItemQuantityList)) {
             const quantitySold = basketItemQuantityList[itemid];
@@ -143,8 +143,8 @@ const ShopContextProvider = (props) => {
         modal,
         toggleModal,
         updateItemQuantity,
-        orderId,
-        customerEmail
+        customerEmail,
+        customerOrderId
     };
     return <ShopContext.Provider value={contextValue}>{props.children}</ShopContext.Provider>;
 };
